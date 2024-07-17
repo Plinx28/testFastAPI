@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 
-app = FastAPI()
+app = FastAPI(title="Recruto greetings")
 
 
 @app.get("/")
@@ -9,4 +9,3 @@ async def hello(name: str = Query(None, alias="name"),
     name = "Someone" if name is None else name
     message = "hmm.. are you here?" if message is None else message
     return f"Hello {name}! {message}"
-
